@@ -9,4 +9,16 @@
   <loc>http://www.capacitesuaequipe.com.br/</loc>
   <changefreq>daily</changefreq>
 </url>
+<url>
+  <loc>http://www.capacitesuaequipe.com.br/quem-somos.php</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.capacitesuaequipe.com.br/contato.php</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.capacitesuaequipe.com.br/postagem.php</loc>
+  <changefreq>daily</changefreq>
+</url>
 </urlset>
