@@ -4,6 +4,21 @@
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="Gama BootCamp 2016 Team 8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="Blog destinado a capacitacao de equipes para grandes empresas" />
+    <meta name="keywords" content="">
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="1 week" />
+    <meta name="robots" content="all" />
+    <meta name="geo.country" content="BR" />
+    <meta name="geo.placename" content="BELO HORIZONTE - MG" />
+    <meta name="DC.title" content="Capacite sua Equipe" />
+    <meta name="DC.creator " content="Gama BootCamp 2016 Team 8" />
+    <meta name="DC.creator.address" content="vitor@consultoriati.net" />
+    <meta name="DC.subject" content="">
+    <meta name="DC.description" content="Blog destinado a capacitacao de equipes para grandes empresas" />
+    <meta name="DC.publisher" content="Gama BootCamp 2016 Team 8" />
+    <meta name="DC.format" content="text/html" />	
 
     <!-- Stylesheets
     ============================================= -->
@@ -29,7 +44,95 @@
     <!-- Document Title
     ============================================= -->
 	<title>Capacite sua Equipe - Team 8</title>
+	<script type="text/javascript">
 
+	$(document).ready(function(){
+		$("#cadastro").click(function(event) {
+			var validacao = validaForm();
+			if (validacao != "") alert(validacao);
+			else {
+				event.preventDefault();
+				var dadosajax = {
+					'nome' : $("#nome").val(),
+					'empresa' : $("#empresa").val(),
+					'email' : $("#email").val()
+				};
+				$.ajax({
+					//pegando a url apartir da action do form
+					url: 'insereLeads.php',
+					data: dadosajax,
+					type: 'POST',
+					cache: false,
+					success: function(result){
+						//se foi inserido com sucesso
+						if($.trim(result) == '1')
+							alert("Obrigado pelo cadastro!");
+						else
+							alert("Ocorreu um erro ao inserir o seu registo!");
+						
+					},
+					error: function() {
+						alert('Erro: Inserir Registo!!');
+					}
+				});
+			}
+		});
+		
+		$("#enviarEmail").click(function(event) {
+			var validacao = validaFormEmail();
+			if (validacao != "") alert(validacao);
+			else {
+				var dadosajax = {
+					'nome' : $("#contatonome").val(),
+					'email' : $("#contatoemail").val(),
+					'empresa' : $("#contatoempresa").val(),
+					'mensagem' : $("#contatomensagem").val(),
+					'telefone' : $("#contatotelefone").val()
+				};
+				$.ajax({
+					//pegando a url apartir da action do form
+					url: 'enviaEmail.php',
+					data: dadosajax,
+					type: 'POST',
+					cache: false,
+					success: function(result){
+						//se foi inserido com sucesso
+						if($.trim(result) == '1')
+							alert("Mensagem enviada com sucesso!");
+						else
+							alert("Ocorreu um erro ao enviar sua mensagem!");
+						
+					},
+					error: function() {
+						alert('Erro: Mensagem nao enviada!');
+					}
+				});
+			}
+		});
+	});	
+	function validaFormEmail() {;
+		var f = document.formContato;
+		var str = '';
+		if (f.contatoemail.value.trim() == '') str += 'Favor inserir o e-mail.\n';
+		else if (!isEmail(f.contatoemail.value)) str += 'E-mail inválido. Favor digitar um e-mail válido.\n';
+		if (f.contatonome.value.trim() == '') str += 'Favor inserir o nome.\n';
+		if (f.contatomensagem.value.trim() == '') str += 'Favor inserir a mensagem.\n';
+		return str;
+	}
+	function validaForm() {
+		var f = document.newsletter;
+		var str = '';
+		if (f.email.value.trim() == '') str = 'Favor inserir o e-mail.';
+		else if (!isEmail(f.email.value)) str = 'E-mail inválido. Favor digitar um e-mail válido.';
+		
+		return str;
+	}
+	function isEmail(email) {
+	  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	  return regex.test(email);
+	}		
+
+	</script>
 </head>
 
 <body class="stretched">
@@ -73,67 +176,44 @@
                     <!-- Postcontent
                     ============================================= -->
                     <div class="postcontent nobottommargin">
-
                         <h3>Entre em contato</h3>
-
                         <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Mensagem enviada com sucesso! Agradecemos pelo contato."></div>
-                        <form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post">
+                        <form class="nobottommargin" id="formContato" name="formContato" action="enviaEmail.php" method="post">
                             <div class="form-process"></div>
                             <div class="col_one_third">
-                                <label for="template-contactform-name">Nome <small>*</small></label>
-                                <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+                                <label for="contatonome">Nome <small>*</small></label>
+                                <input type="text" id="contatonome" name="contatonome" value="" class="sm-form-control required" />
                             </div>
                             <div class="col_one_third">
-                                <label for="template-contactform-email">E-mail <small>*</small></label>
-                                <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
+                                <label for="contatoemail">E-mail <small>*</small></label>
+                                <input type="email" id="contatoemail" name="contatoemail" value="" class="required email sm-form-control" />
                             </div>
                             <div class="col_one_third col_last">
-                                <label for="template-contactform-phone">Telefone</label>
-                                <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
+                                <label for="contatotelefone">Telefone</label>
+                                <input type="text" id="contatotelefone" name="contatotelefone" value="" class="sm-form-control" />
                             </div>
                             <div class="clear"></div>
                             <div class="col_two_third">
-                                <label for="template-contactform-empresa">Empresa</label>
-                                <input type="text" id="template-contactform-empresa" name="template-contactform-empresa" value="" class="sm-form-control" />
+                                <label for="contatoempresa">Empresa</label>
+                                <input type="text" id="contatoempresa" name="contatoempresa" value="" class="sm-form-control" />
                             </div>
                             <div class="clear"></div>
                             <div class="col_full">
-                                <label for="template-contactform-message">Mensagem <small>*</small></label>
-                                <textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
-                            </div>
-                            <div class="col_full hidden">
-                                <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+                                <label for="contatomensagem">Mensagem <small>*</small></label>
+                                <textarea class="required sm-form-control" id="contatomensagem" name="contatomensagem" rows="6" cols="30"></textarea>
                             </div>
                             <div class="col_full">
-                                <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Enviar</button>
+                                <button class="button button-3d nomargin" type="button" id="enviarEmail" name="enviarEmail" value="Enviar" onclick="avalidaFormEmail();">Enviar</button>
                             </div>
 
                         </form>
-						 <script type="text/javascript">
-                            $("#template-contactform").validate({
-                                submitHandler: function(form) {
-                                    $('.form-process').fadeIn();
-                                    $(form).ajaxSubmit({
-                                        target: '#contact-form-result',
-                                        success: function() {
-                                            $('.form-process').fadeOut();
-                                            $('#template-contactform').find('.sm-form-control').val('');
-                                            $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
-                                            SEMICOLON.widget.notifications($('#contact-form-result'));
-                                        }
-                                    });
-                                }
-                            });
 
-                        </script>
                     </div><!-- .postcontent end -->
                     <!-- Sidebar
                     ============================================= -->
                     <div class="sidebar nobottommargin col_last clearfix">
                         <div class="sidebar-widgets-wrap">
-
                             <div class="widget widget-twitter-feed clearfix">
-
                                 <h4>Receba mais informações</h4>
 								<form class="nobottommargin" id="newsletter" name="newsletter" action="insereLeads.php" method="post" novalidate="novalidate">
 

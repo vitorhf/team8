@@ -13,6 +13,21 @@ if (is_array($_GET)) {
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="Gama BootCamp 2016 Team 8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="Blog destinado a capacitacao de equipes para grandes empresas" />
+    <meta name="keywords" content="">
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="1 week" />
+    <meta name="robots" content="all" />
+    <meta name="geo.country" content="BR" />
+    <meta name="geo.placename" content="BELO HORIZONTE - MG" />
+    <meta name="DC.title" content="Capacite sua Equipe" />
+    <meta name="DC.creator " content="Gama BootCamp 2016 Team 8" />
+    <meta name="DC.creator.address" content="vitor@consultoriati.net" />
+    <meta name="DC.subject" content="">
+    <meta name="DC.description" content="Blog destinado a capacitacao de equipes para grandes empresas" />
+    <meta name="DC.publisher" content="Gama BootCamp 2016 Team 8" />
+    <meta name="DC.format" content="text/html" />	
 
     <!-- Stylesheets
     ============================================= -->
@@ -38,7 +53,55 @@ if (is_array($_GET)) {
     <!-- Document Title
     ============================================= -->
 	<title>Capacite sua Equipe - Team 8</title>
+	<script>
 
+	$(document).ready(function(){
+		$("#cadastro").click(function(event) {
+			var validacao = validaForm();
+			if (validacao != "") alert(validacao);
+			else {
+				event.preventDefault();
+				var dadosajax = {
+					'nome' : $("#nome").val(),
+					'empresa' : $("#empresa").val(),
+					'email' : $("#email").val()
+				};
+				$.ajax({
+					//pegando a url apartir da action do form
+					url: 'insereLeads.php',
+					data: dadosajax,
+					type: 'POST',
+					cache: false,
+					success: function(result){
+						//se foi inserido com sucesso
+						if($.trim(result) == '1')
+							alert("Obrigado pelo cadastro!");
+						else
+							alert("Ocorreu um erro ao inserir o seu registo!");
+						
+					},
+					error: function() {
+						alert('Erro: Inserir Registo!!');
+					}
+				});
+			}
+		});
+	});	
+	
+	function validaForm() {
+		var f = document.newsletter;
+		var str = '';
+		if (f.email.value.trim() == '') str = 'Favor inserir o e-mail.';
+		else if (!isEmail(f.email.value)) str = 'E-mail inválido. Favor digitar um e-mail válido.';
+		
+		return str
+	}
+	function isEmail(email) {
+	  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	  return regex.test(email);
+	}		
+
+	</script>
 </head>
 
 <body class="stretched">
@@ -66,7 +129,7 @@ if (is_array($_GET)) {
                         <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
                         <ul>
                             <li><a href="index.php"><div>Home</div></a></li>
-                            <li class="current"><a href="quem-somos.php"><div>Quem Somos</div></a></li>
+                            <li><a href="quem-somos.php"><div>Quem Somos</div></a></li>
                             <li><a href="contato.php"><div>Contato</div></a></li>
                         </ul>
                     </div>
