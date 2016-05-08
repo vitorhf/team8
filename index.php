@@ -206,6 +206,7 @@ include_once("comum.php");
 				." ORDER BY data DESC, id DESC "
 	;
 	$db->exec($sql);
+	$erro = $db->erro();
 	if (!$db->numrows()) {
 		echo "<div class=\"entry clearfix\">\n";
 		echo "   <div class=\"entry-c\">\n";
@@ -214,6 +215,7 @@ include_once("comum.php");
 		echo "      </div>\n";
 		echo "		<div class=\"entry-content\">\n";
 		echo "         <p>Pedimos desculpas mas estamos sem conteúdo no momento. Em breve as postagens estarão no ar!</p>";
+		echo "<p>".$erro."</p>"
 		echo "		</div>\n";
 		echo "	</div>\n";
 		echo "</div>\n";
