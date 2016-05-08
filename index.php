@@ -7,6 +7,21 @@ include_once("comum.php");
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="Gama BootCamp 2016 Team 8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="Blog destinado a capacitacao de equipes para grandes empresas">
+    <meta name="keywords" content="">
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="1 week" />
+    <meta name="robots" content="all" />
+    <meta name="geo.country" content="BR" />
+    <meta name="geo.placename" content="BELO HORIZONTE - MG" />
+    <meta name="DC.title" content="Capacite sua Equipe" />
+    <meta name="DC.creator " content="Gama BootCamp 2016 Team 8" />
+    <meta name="DC.creator.address" content="vitor@consultoriati.net" />
+    <meta name="DC.subject" content="">
+    <meta name="DC.description" content="Blog destinado a capacitacao de equipes para grandes empresas" />
+    <meta name="DC.publisher" content="Gama BootCamp 2016 Team 8" />
+    <meta name="DC.format" content="text/html" />	
     <!-- Stylesheets
     ============================================= -->
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
@@ -215,7 +230,7 @@ include_once("comum.php");
 		echo "      </div>\n";
 		echo "		<div class=\"entry-content\">\n";
 		echo "         <p>Pedimos desculpas mas estamos sem conteúdo no momento. Em breve as postagens estarão no ar!</p>";
-		echo "<p>".$erro."</p>"
+		echo "<p>".$erro."</p>";
 		echo "		</div>\n";
 		echo "	</div>\n";
 		echo "</div>\n";
