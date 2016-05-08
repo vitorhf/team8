@@ -22,8 +22,8 @@ if( isset( $_POST['template-contactform-submit'] ) AND $_POST['template-contactf
 
         if( $botcheck == '' ) {
 
-            $mail->SetFrom( $email , $name );
-            $mail->AddReplyTo( $email , $name );
+            $mail->SetFrom( 'vitorhf@gmail' , 'TEAM 8 Gama BootCamp 2016' );
+            $mail->AddReplyTo( 'vitorhf@gmail' , 'TEAM 8 Gama BootCamp 2016' );
             $mail->AddAddress( $toemail , $toname );
             $mail->Subject = 'Contato enviado pelo site www.capacitesuaequipe.com.br';
 
