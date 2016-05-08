@@ -107,8 +107,8 @@ include_once("comum.php");
                     <div class="container clearfix">
                         <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
                         <ul>
-                            <li><a href="index.php"><div>Home</div></a></li>
-                            <li class="current"><a href="quem-somos.php"><div>Quem Somos</div></a></li>
+                            <li class="current"><a href="index.php"><div>Home</div></a></li>
+                            <li><a href="quem-somos.php"><div>Quem Somos</div></a></li>
                             <li><a href="contato.php"><div>Contato</div></a></li>
                         </ul>
 
