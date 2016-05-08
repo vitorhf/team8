@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-BR">
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Gama BootCamp 2016 Team 8" />
+
+    <!-- Stylesheets
+    ============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+    <link rel="stylesheet" href="css/responsive.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!--[if lt IE 9]>
+    	<script src="js/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <!-- External JavaScripts
+    ============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+    <!-- Document Title
+    ============================================= -->
+	<title>Capacite sua Equipe - Team 8</title>
+
+</head>
+
+<body class="stretched">
+
+    <!-- Document Wrapper
+    ============================================= -->
+    <div id="wrapper" class="clearfix">
+
+        <!-- Header
+        ============================================= -->
+        <header id="header" class="sticky-style-2">
+
+            <div class="container clearfix">
+
+                <!-- Logo
+                ============================================= -->
+                <div id="logo" class="divcenter">
+                    <a href="index.html" class="standard-logo" data-dark-logo="images/logo.png"><img class="divcenter" src="images/logo.png" alt="Capacite sua Equipe"></a>
+                    <a href="index.html" class="retina-logo" data-dark-logo="images/logo.png"><img class="divcenter" src="images/logo.png" alt="Capacite sua Equipe"></a>
+                </div><!-- #logo end -->
+
+            </div>
+
+            <div id="header-wrap">
+
+                <!-- Primary Navigation
+                ============================================= -->
+                <nav id="primary-menu" class="style-2 center">
+
+                    <div class="container clearfix">
+
+                        <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                        <ul>
+                            <li><a href="index.html"><div>Home</div></a></li>
+                            <li><a href="quem-somos.html"><div>Quem Somos</div></a></li>
+                            <li><a href="#"><div>Contato</div></a></li>
+                        </ul>
+
+                    </div>
+
+                </nav><!-- #primary-menu end -->
+
+            </div>
+
+        </header><!-- #header end -->
+
+        <!-- Content
+        ============================================= -->
+        <section id="content">
+
+            <div class="content-wrap">
+			
+				<a href="#" data-toggle="modal" data-target="#contactFormModal" class="button button-full button-red center tright header-stick bottommargin-lg">
+                    <div class="container clearfix">
+                        Cadastre-se e faça download do nosso e-book gratuitamente. <strong>Clique aqui</strong> <i class="icon-caret-right" style="top:4px;"></i>
+                    </div>
+                </a>
+				<div class="modal fade" id="contactFormModal" tabindex="-1" role="dialog" aria-labelledby="contactFormModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="contactFormModalLabel">Cadastre-se</h4>
+							</div>
+							<div class="modal-body">
+								<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post">
+
+									<div class="col_full">
+										<label for="template-contactform-name">Nome</label>
+										<input type="text" id="nome" name="nome" value="" class="sm-form-control required"/>
+									</div>
+									<div class="col_full">
+										<label for="template-contactform-name">Empresa</label>
+										<input type="text" id="empresa" name="empresa" value="" class="sm-form-control required"/>
+									</div>									
+
+									<div class="col_full">
+										<label for="template-contactform-email">E-mail <small>*</small></label>
+										<input type="email" id="email" name="email" value="" class="required email sm-form-control"/>
+									</div>
+
+									<div class="col_full">
+										<button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Cadastrar</button>
+									</div>
+
+								</form>
+
+								<script type="text/javascript">
+									$("#template-contactform").validate({
+										submitHandler: function(form) {
+											$('.form-process').fadeIn();
+											$(form).ajaxSubmit({
+												target: '#contact-form-result',
+												success: function() {
+													$('.form-process').fadeOut();
+													$('#template-contactform').find('.sm-form-control').val('');
+													$('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
+													SEMICOLON.widget.notifications($('#contact-form-result'));
+												}
+											});
+										}
+									});
+								</script>
+								
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+
+                <div class="container clearfix">
+
+                    <!-- Post Content
+                    ============================================= -->
+                    <div class="postcontent nobottommargin clearfix">
+
+                        <div class="single-post nobottommargin">
+
+                            <!-- Single Post
+                            ============================================= -->
+                            <div class="entry clearfix">
+
+                                <!-- Entry Title
+                                ============================================= -->
+                                <div class="entry-title">
+                                    <h2>Titulo da Postagem</h2>
+                                </div><!-- .entry-title end -->
+
+                                <!-- Entry Meta
+                                ============================================= -->
+                                <ul class="entry-meta clearfix">
+                                    <li><i class="icon-calendar3"></i> 10/02/2016</li>
+                                    <li><a href="#"><i class="icon-user"></i> Nome do Autor</a></li>
+                                </ul><!-- .entry-meta end -->
+
+                                <!-- Entry Content
+                                ============================================= -->
+                                <div class="entry-content notopmargin">
+
+                                    <!-- Entry Image
+                                    ============================================= -->
+                                    <div class="entry-image alignleft">
+                                        <a href="#"><img src="images/equipe1.jpg" alt="Blog Single"></a>
+                                    </div><!-- .entry-image end -->
+
+                                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+
+                                    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="#">Curabitur blandit tempus porttitor</a>. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.</p>
+
+                                    <blockquote><p>Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p></blockquote>
+
+                                    <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus.</p>
+
+                                    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. <a href="#">Nullam quis risus eget urna</a> mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+
+                                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+
+                                    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.</p>
+                                    <!-- Post Single - Content End -->
+
+                                    <!-- Tag Cloud
+                                    ============================================= -->
+                                    <div class="tagcloud clearfix bottommargin">
+                                        <a href="#">treinamento</a>
+                                        <a href="#">reunião online</a>
+                                    </div><!-- .tagcloud end -->
+
+                                    <div class="clear"></div>
+
+                                    <!-- Post Single - Share
+                                    ============================================= -->
+                                    <div class="si-share noborder clearfix">
+                                        <span>COMPARTILHE:</span>
+                                        <div>
+                                            <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.capacitesuaequipe.com.br/postagem.html" class="social-icon si-borderless si-facebook">
+                                                <i class="icon-facebook"></i>
+                                                <i class="icon-facebook"></i>
+                                            </a>
+                                            <a target="_blank" href="https://twitter.com/intent/tweet?original_referer=http://www.capacitesuaequipe.com.br/postagem.html&source=tweetbutton&text=Titulo da Postagem&url=http://www.capacitesuaequipe.com.br" class="social-icon si-borderless si-twitter">
+                                                <i class="icon-twitter"></i>
+                                                <i class="icon-twitter"></i>
+                                            </a>
+                                            <a target="_blank" href="https://plus.google.com/share?url=http://www.capacitesuaequipe.com.br/postagem.html" class="social-icon si-borderless si-gplus">
+                                                <i class="icon-gplus"></i>
+                                                <i class="icon-gplus"></i>
+                                            </a>
+                                            <a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.capacitesuaequipe.com.br/postagem.html&title=Titulo da Postagem&summary=Titulo da Postagem" class="social-icon si-borderless si-linkedin">
+                                                <i class="icon-linkedin"></i>
+                                                <i class="icon-linkedin"></i>
+                                            </a>
+                                        </div>
+                                    </div><!-- Post Single - Share End -->
+                                </div>
+                            </div><!-- .entry end -->
+
+							<h4>Postagens Relacionadas:</h4>
+
+                            <div class="related-posts clearfix">
+
+                                <div class="col_half nobottommargin">
+
+                                    <div class="mpost clearfix">
+                                        <div class="entry-image">
+                                            <a href="#"><img src="images/equipe2.jpg" alt="Titulo Postagem"></a>
+                                        </div>
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="postagem.html">Titulo Postagem 1</a></h4>
+                                            </div>
+                                            <ul class="entry-meta clearfix">
+                                                <li><i class="icon-calendar3"></i> 10/02/2016</li>
+                                            </ul>
+                                            <div class="entry-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia nisi perferendis.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mpost clearfix">
+                                        <div class="entry-image">
+                                            <a href="#"><img src="images/equipe3.jpg" alt="Titulo"></a>
+                                        </div>
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="postagem.html">Titulo Postagem 2</a></h4>
+                                            </div>
+                                            <ul class="entry-meta clearfix">
+                                                <li><i class="icon-calendar3"></i> 24/02/2016</li>
+                                            </ul>
+                                            <div class="entry-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia nisi perferendis.</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col_half nobottommargin col_last">
+
+                                    <div class="mpost clearfix">
+                                        <div class="entry-image">
+                                            <a href="#"><img src="images/equipe1.jpg" alt="Titulo"></a>
+                                        </div>
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="postagem.html">Titulo Postagem 3</a></h4>
+                                            </div>
+                                            <ul class="entry-meta clearfix">
+                                                <li><i class="icon-calendar3"></i> 08/03/2016</li>
+                                            </ul>
+                                            <div class="entry-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia nisi perferendis.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mpost clearfix">
+                                        <div class="entry-image">
+                                            <a href="#"><img src="images/equipe2.jpg" alt="Titulo"></a>
+                                        </div>
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="postagem.html">Titulo Postagem 4</a></h4>
+                                            </div>
+                                            <ul class="entry-meta clearfix">
+                                                <li><i class="icon-calendar3"></i> 22/03/2016</li>
+                                            </ul>
+                                            <div class="entry-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia nisi perferendis.</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div><!-- .postcontent end -->
+
+                    <!-- Sidebar
+                    ============================================= -->
+                    <div class="sidebar nobottommargin col_last clearfix">
+                        <div class="sidebar-widgets-wrap">
+
+                            <div class="widget widget-twitter-feed clearfix">
+
+                                <h4>Receba mais informações</h4>
+								<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post" novalidate="novalidate">
+
+									<div class="form-process"></div>
+
+									<div class="col_full">
+										<input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control" placeholder="Nome">
+									</div>
+
+									<div class="col_full">
+										<input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control" placeholder="Empresa" >
+									</div>									
+
+									<div class="col_full">
+										<input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" aria-required="true" placeholder="E-mail (obrigatório)">
+									</div>
+
+									<div class="col_full">
+										<button name="submit" type="submit" id="submit-button" tabindex="5" value="Cadastrar" class="button button-3d nomargin">Cadastrar</button>
+									</div>
+
+								</form>
+
+
+                            </div>
+							<div class="widget si-share noborder clearfix">
+								<span>COMPARTILHE:</span>
+								<div>
+									<a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.capacitesuaequipe.com.br/postagem.html" class="social-icon si-borderless si-facebook">
+										<i class="icon-facebook"></i>
+										<i class="icon-facebook"></i>
+									</a>
+									<a target="_blank" href="https://twitter.com/intent/tweet?original_referer=http://www.capacitesuaequipe.com.br/postagem.html&source=tweetbutton&text=Titulo da Postagem&url=http://www.capacitesuaequipe.com.br" class="social-icon si-borderless si-twitter">
+										<i class="icon-twitter"></i>
+										<i class="icon-twitter"></i>
+									</a>
+									<a target="_blank" href="https://plus.google.com/share?url=http://www.capacitesuaequipe.com.br/postagem.html" class="social-icon si-borderless si-gplus">
+										<i class="icon-gplus"></i>
+										<i class="icon-gplus"></i>
+									</a>
+									<a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.capacitesuaequipe.com.br/postagem.html&title=Titulo da Postagem&summary=Titulo da Postagem" class="social-icon si-borderless si-linkedin">
+										<i class="icon-linkedin"></i>
+										<i class="icon-linkedin"></i>
+									</a>
+								</div>
+							</div><!-- Post Single - Share End -->							
+                            <div class="widget clearfix">
+
+                                <h4>Tags</h4>
+                                <div class="tagcloud">
+                                    <a href="#">treinamento online</a>
+                                    <a href="#">capacitação de equipes</a>
+                                    <a href="#">redução de custo empresarial</a>
+                                    <a href="#">comunicação empresarial</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div><!-- .sidebar end -->
+
+                </div>
+
+            </div>
+
+        </section><!-- #content end -->
+
+<!-- Footer
+        ============================================= -->
+        <footer id="footer" class="dark">
+
+            <!-- Copyrights
+            ============================================= -->
+            <div id="copyrights">
+
+                <div class="container clearfix">
+
+                    <div class="col_half">
+                        <img src="images/footer-logo.png" alt="" class="footer-logo">
+
+                        Copyrights &copy; 2016 - Gama BootCamp 2016 - #Team 8
+                    </div>
+
+                </div>
+
+            </div><!-- #copyrights end -->
+
+        </footer><!-- #footer end -->
+
+    </div><!-- #wrapper end -->
+
+    <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- Footer Scripts
+    ============================================= -->
+    <script type="text/javascript" src="js/functions.js"></script>
+
+</body>
+</html>
