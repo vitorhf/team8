@@ -10,9 +10,11 @@ if ($email) {
 	$erro = $db->erro();
 	if ($erro) {
 		$mensagem = 'ERRO NO SITE GAMA<BR>'.$sql.' - '.$db->erro();
-		envia_email('vitorhf@gmail.com','vitorhf@gmail.com','Erro site gama',$mensagem,true);		
+		envia_email('vitorhf@gmail.com','vitorhf@gmail.com','Erro site gama',$mensagem,true);
 		echo 0;
 	} else {
+		$mensagem = $sql;
+		envia_email('vitorhf@gmail.com','vitorhf@gmail.com','Gama Bootcamp - Cadastro Feito',$mensagem);
 		echo 1;
 	}
 } else {

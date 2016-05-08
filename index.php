@@ -8,7 +8,7 @@ include_once("comum.php");
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="Gama BootCamp 2016 Team 8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="description" content="Blog destinado a capacitacao de equipes para grandes empresas">
+    <meta name="description" content="Blog destinado a capacitacao de equipes para grandes empresas" />
     <meta name="keywords" content="">
     <meta name="rating" content="General" />
     <meta name="revisit-after" content="1 week" />
@@ -230,7 +230,7 @@ include_once("comum.php");
 		echo "      </div>\n";
 		echo "		<div class=\"entry-content\">\n";
 		echo "         <p>Pedimos desculpas mas estamos sem conteúdo no momento. Em breve as postagens estarão no ar!</p>";
-		echo "<p>".$erro."</p>";
+		//echo "<p>".$erro."</p>";
 		echo "		</div>\n";
 		echo "	</div>\n";
 		echo "</div>\n";
